@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    add: (v) => dispatch(toggle(v))
+    toggle: (v) => dispatch(toggle(v))
 })
 export default connect(
     mapStateToProps,

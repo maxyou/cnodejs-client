@@ -7,12 +7,18 @@ const todos = (state = initState, action) => {
         case ACTION.ADD:
             return [...state, {id:Date.now(),todo: action.payload, toggle:false}]
         case ACTION.TOGGLE:
-            return [state.map(
-                item => 
-                    (item.id == action.payload.id)?
-                    {...item, toggle:!item.toggle}
-                    :item
-            )]
+            return state.map(
+                item => {
+                    console.log(item.id)
+                    console.log(action.payload)
+                    if(item.id == action.payload.id){
+                        console.log('toggle')
+                        return {...item, toggle:!item.toggle}
+                    }else{
+                        return item
+                    }
+                }
+            )
         default:
             return state
     }
