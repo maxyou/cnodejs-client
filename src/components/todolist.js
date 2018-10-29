@@ -24,15 +24,15 @@ class TodoList extends React.Component{
     render(){
         return (
             <div>
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    <input type="text" 
-                        value={this.state.value}
-                        onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />Modify
-            </form>
-        </div>
+                <ul>
+                    {this.props.todos.map(
+                        item => (
+                            <li key={item.id}>{item.todo}:{item.toggle.toString()}</li>
+                        )
+                    )}
+                </ul>
+
+            </div>
         )
     }
 }
