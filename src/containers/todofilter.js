@@ -3,11 +3,11 @@ import {filter} from '../actions/actions'
 import {connect} from 'react-redux'
 
 const mapStateToProps = state => ({
-    todos:state.todos
+    filter:state.filter
 })
 
 const mapDispatchToProps = dispatch => ({
-    add: (v) => dispatch(filter(v))
+    changeFilter: (v) => dispatch(filter(v))
 })
 export default connect(
     mapStateToProps,

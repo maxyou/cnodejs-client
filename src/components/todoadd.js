@@ -18,7 +18,7 @@ class TodoAdd extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        console.log(this.state.value)
+        // console.log(this.state.value)
         this.props.add(this.state.value)
         this.setState(this.initState)
     }

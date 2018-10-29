@@ -9,10 +9,10 @@ const todos = (state = initState, action) => {
         case ACTION.TOGGLE:
             return state.map(
                 item => {
-                    console.log(item.id)
-                    console.log(action.payload)
+                    // console.log(item.id)
+                    // console.log(action.payload)
                     if(item.id == action.payload.id){
-                        console.log('toggle')
+                        // console.log('toggle')
                         return {...item, toggle:!item.toggle}
                     }else{
                         return item

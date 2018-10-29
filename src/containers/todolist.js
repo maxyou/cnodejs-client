@@ -3,7 +3,8 @@ import {toggle} from '../actions/actions'
 import {connect} from 'react-redux'
 
 const mapStateToProps = state => ({
-    todos:state.todos
+    todos:state.todos,
+    filter:state.filter
 })
 
 const mapDispatchToProps = dispatch => ({
