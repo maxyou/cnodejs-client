@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Pages from './scaffolds/pages'
+import Todo from './scaffolds/todo'
 import ContainerTodoAdd from './containers/todoadd'
 import ContainerTodoList from './containers/todolist'
 import ContainerTodoFilter from './containers/todofilter'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from './reducers';
+import { HashRouter, Route, Redirect } from 'react-router-dom'
 
 const store = createStore(
   reducers,
@@ -15,13 +18,24 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Provider store={store}>
-          <div>
-            <ContainerTodoAdd />
-            <ContainerTodoList />
-            <ContainerTodoFilter />
-          </div>
-        </Provider>
+        <HashRouter>
+          <Provider store={store}>
+            <div>
+                {/* <Link to="/">to /</Link>{'  '}
+                <Link to="/about">to about</Link>{'  '}
+                <Link to="/topics">to topics</Link> */}
+
+                <Route exact path="/" render={()=><Redirect to="/pages" />} />
+                <Route path="/pages" component={Pages} />
+                <Route path="/todo" component={Todo} />
+
+              {/* <ContainerTodoAdd />
+              <ContainerTodoList />
+              <ContainerTodoFilter /> */}
+            </div>
+          </Provider>
+        </HashRouter>
+
       </div>
     );
   }
