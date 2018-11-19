@@ -29,11 +29,11 @@ class Pages extends React.Component {
         return (
             <div>
                 
-                <Link to={`${this.props.match.url}/`}>to home</Link>{'  '}
+                {/* <Link to={`${this.props.match.url}/`}>to home</Link>{'  '} */}
                 <Link to={`${this.props.match.url}/about`}>to about</Link>{'  '}
                 <Link to={`${this.props.match.url}/topics`}>to topics</Link>{'  '}
                 
-                <Route exact path={`${this.props.match.url}/`} render={()=><Redirect to={`${this.props.match.url}topics`} />} />
+                {/* <Route exact path={`${this.props.match.url}/`} render={()=><Redirect to={`${this.props.match.url}/topics`} />} /> */}
                 <Route path={`${this.props.match.url}/about`} component={About} />
                 <Route path={`${this.props.match.url}/topics`} component={Topics} />
                 
