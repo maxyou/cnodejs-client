@@ -8,19 +8,23 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from './reducers';
 import { HashRouter, Route, Redirect } from 'react-router-dom'
+import styled from 'styled-components'
 
 const store = createStore(
   reducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
-
+const DivFull = styled.div`
+    height:100%;
+    background-color: green;
+`
 class App extends Component {
   render() {
     return (
-      <div>
+      <DivFull>
         <HashRouter>
           <Provider store={store}>
-            <div>
+            <DivFull>
                 {/* <Link to="/">to /</Link>{'  '}
                 <Link to="/about">to about</Link>{'  '}
                 <Link to="/topics">to topics</Link> */}
@@ -32,11 +36,11 @@ class App extends Component {
               {/* <ContainerTodoAdd />
               <ContainerTodoList />
               <ContainerTodoFilter /> */}
-            </div>
+            </DivFull>
           </Provider>
         </HashRouter>
 
-      </div>
+      </DivFull>
     );
   }
 }
