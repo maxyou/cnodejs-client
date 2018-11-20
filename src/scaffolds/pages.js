@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 // import styled from 'styled-components'
-import { Redirect, Route, Link } from 'react-router-dom'
+import { Switch, Redirect, Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
+
+const H2Red = styled.h2`background:red;`
+const H2Green = styled.h2`background:green;`
 
 function Home() {
     return (
@@ -14,14 +17,14 @@ function Home() {
 function About() {
     return (
         <div>
-            <h2>About</h2>
+            <H2Red>About</H2Red>
         </div>
     );
 }
 function Topics() {
     return (
         <div>
-            <h2>Topics</h2>
+            <H2Green>Topics</H2Green>
         </div>
     );
 }
@@ -52,8 +55,12 @@ class Pages extends React.Component {
                     <FlexMain>
                         {/* <Link to={`${this.props.match.url}/`}>to home</Link>{'  '} */}
                         {/* <Route exact path={`${this.props.match.url}/`} render={()=><Redirect to={`${this.props.match.url}/topics`} />} /> */}
-                        <Route path={`${this.props.match.url}/about`} component={About} />
-                        <Route path={`${this.props.match.url}/topics`} component={Topics} />
+                        <Switch>
+                            <Route exact path={`${this.props.match.url}/`} component={Home} />
+                            <Route path={`${this.props.match.url}/home`} component={Home} />
+                            <Route path={`${this.props.match.url}/about`} component={About} />
+                            <Route path={`${this.props.match.url}/topics`} component={Topics} />
+                        </Switch>
                     </FlexMain>
                     <FlexBottom>
                         <Link to={`${this.props.match.url}/about`}>to about</Link>
