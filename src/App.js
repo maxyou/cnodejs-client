@@ -12,13 +12,15 @@ import reducers from './reducers';
 import { Switch, HashRouter, Route, Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 import thunkMiddleware from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
+
 
 const store = createStore(
   reducers,
   // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  applyMiddleware(
+  composeWithDevTools(applyMiddleware(
     thunkMiddleware
-  )
+  ))
 )
 const DivFull = styled.div`
     height:100%;

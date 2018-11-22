@@ -27,5 +27,8 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy":"https://cnodejs.org/api/v1"
+  "proxy": "https://cnodejs.org/api/v1",
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.5"
+  }
 }

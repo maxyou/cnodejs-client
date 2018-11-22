@@ -3,8 +3,7 @@ import {httpGet} from '../actions/cnode'
 import {connect} from 'react-redux'
 
 const mapStateToProps = state => ({
-    loading:state.loading,
-    topics:state.topics
+    cnode:state.cnode
 })
 
 const mapDispatchToProps = dispatch => ({

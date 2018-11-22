@@ -19,9 +19,9 @@ class CNode extends React.Component{
             <div>
                 cnode=====
                 <div>
-                    {this.props.loading}
+                    {this.props.cnode.loading}
                     <hr/>
-                    {JSON.stringify(this.props.topics)}
+                    {JSON.stringify(this.props.cnode.topics)}
                 </div>
             </div>
         )
