@@ -1,4 +1,4 @@
-import {ACTION} from '../actions/cnode'
+import {ACTION} from '../actions/http'
 
 const initState = {
     loading: false,

@@ -1,5 +1,5 @@
 import CNode from '../components/cnode'
-import {httpGet} from '../actions/cnode'
+import {httpGet} from '../actions/http'
 import {connect} from 'react-redux'
 
 const mapStateToProps = state => ({
