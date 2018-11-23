@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 // import styled from 'styled-components'
-import { Switch, Redirect, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const H2Red = styled.h2`background:red;`

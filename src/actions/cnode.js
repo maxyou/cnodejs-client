@@ -11,16 +11,16 @@ export const fatchSuccess = (v) => ({ type: ACTION.FETCH_POST_SUCCESS, payload: 
 
 export function httpGet(url){
 
-    console.log('action httpGet:' + url)
+    // console.log('action httpGet:' + url)
     return function(dispatch){
         dispatch(fatchRequest())
 
         return axios.get(url)
         .then(
             res=>{
-                if(res.status==200){
-                    console.log('axios 200')
-                    console.log(res.data)
+                if(res.status===200){
+                    // console.log('axios 200')
+                    // console.log(res.data)
                     dispatch(fatchSuccess(res.data.data))
                 }
                 // console.log(res)

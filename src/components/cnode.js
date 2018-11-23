@@ -1,27 +1,20 @@
-import React, { Component } from 'react'
-import {FILTER} from '../reducers/filter'
+import React from 'react'
 
 class CNode extends React.Component{
-
-    constructor(props){
-        super(props)
-    }
 
     componentDidMount(){
         this.props.httpGet('/topics')
     }
 
     render(){
-        console.log(this.props)
-        // console.log(this.props.loading)
-        // console.log(this.props.topics)
+        // console.log(this.props)
         return (
             <div>
                 cnode=====
                 <div>
-                    {this.props.cnode.loading}
+                    {this.props.http.loading}
                     <hr/>
-                    {JSON.stringify(this.props.cnode.topics)}
+                    {JSON.stringify(this.props.http.topics)}
                 </div>
             </div>
         )

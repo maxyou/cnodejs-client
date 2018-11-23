@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components'
 import axios from 'axios'
 
@@ -19,7 +19,7 @@ class CNode extends React.Component {
         axios.get('/topics')
             .then(
                 res=>{
-                    if(res.status==200){
+                    if(res.status===200){
                         this.setState({data:res.data})
                     }
                     // console.log(res)

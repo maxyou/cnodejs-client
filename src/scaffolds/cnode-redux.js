@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ContainerCNode from '../containers/cnode'
 
-class Todo extends React.Component {
+class CNode extends React.Component {
     render() {
         return (
             <div>
@@ -14,4 +14,4 @@ class Todo extends React.Component {
 
 }
 
-export default Todo
+export default CNode

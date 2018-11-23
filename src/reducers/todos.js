@@ -11,7 +11,7 @@ const todos = (state = initState, action) => {
                 item => {
                     // console.log(item.id)
                     // console.log(action.payload)
-                    if(item.id == action.payload.id){
+                    if(item.id === action.payload.id){
                         // console.log('toggle')
                         return {...item, toggle:!item.toggle}
                     }else{

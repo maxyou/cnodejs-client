@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {FILTER} from '../reducers/filter'
 
 class TodoList extends React.Component{
@@ -27,11 +27,11 @@ class TodoList extends React.Component{
                             // console.log(this.props.filter)
                             // console.log(FILTER.ALL)
                             // console.log(item.toggle)
-                            if(this.props.filter==FILTER.ALL){
+                            if(this.props.filter===FILTER.ALL){
                                 return todo
-                            }else if(this.props.filter==FILTER.ACTIVE && item.toggle==false){
+                            }else if(this.props.filter===FILTER.ACTIVE && item.toggle===false){
                                 return todo
-                            }else if(this.props.filter==FILTER.COMPLETED && item.toggle==true){
+                            }else if(this.props.filter===FILTER.COMPLETED && item.toggle===true){
                                 return todo
                             }else{
                                 return null

@@ -3,7 +3,7 @@ import {httpGet} from '../actions/cnode'
 import {connect} from 'react-redux'
 
 const mapStateToProps = state => ({
-    cnode:state.cnode
+    http:state.http
 })
 
 const mapDispatchToProps = dispatch => ({
