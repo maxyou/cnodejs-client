@@ -2,7 +2,7 @@ import {ACTION} from '../actions/http'
 
 const initState = {
     loading: false,
-    topics: 'topics is empty'
+    topics: []
 }
 
 const http = (state = initState, action) => {
