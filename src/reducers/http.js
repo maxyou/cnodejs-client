@@ -7,13 +7,13 @@ const initState = {
 
 const http = (state = initState, action) => {
     switch (action.type) {
-        case ACTION.FETCH_POST_REQUEST:
-            // console.log('ACTION.FETCH_POST_REQUEST')
+        case ACTION.HTTP_REQUEST:
+            // console.log('ACTION.HTTP_REQUEST')
             return {...state, loading: true}
-        case ACTION.FETCH_POST_FAILURE:
+        case ACTION.HTTP_FAILURE:
             return {...state, loading: false}
-        case ACTION.FETCH_POST_SUCCESS:
-            // console.log('ACTION.FETCH_POST_SUCCESS')
+        case ACTION.HTTP_SUCCESS:
+            // console.log('ACTION.HTTP_SUCCESS')
             // console.log(action.payload)
             return {...state, loading: false, topics: action.payload}
         default:
