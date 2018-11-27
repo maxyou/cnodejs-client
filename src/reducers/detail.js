@@ -1,6 +1,7 @@
 import {ACTION} from '../actions/detail'
 
 const initState = {
+    detailtest: 'in detail',
     loading: false,
     data: {}
 }

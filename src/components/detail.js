@@ -6,16 +6,30 @@ import { Switch, Route, Link } from 'react-router-dom'
 class Detail extends React.Component {
 
     componentDidMount() {
-        this.props.httpGet(`/topics/${this.props.match.params.id}`)
-        // console.log(this.props)
+        this.props.httpGet(`/topic/${this.props.match.params.id}`)
     }
-
+    
     render() {
+        console.log('detail.props')
+        console.log(this.props)
         return (
             <div>
                 detail id:{this.props.match.params.id}
                 <hr/>
-                {JSON.stringify(this.props.detail)}
+                {/* {JSON.stringify(this.props.detail)} */}
+
+                <div>
+                    {this.props.detail.data?
+                        (this.props.detail.data.data?
+                            this.props.detail.data.data.content
+                            :null)
+                        :null
+                    }
+                </div>
+                <hr/>
+                <div>
+                </div>
+
             </div>
         )
     }

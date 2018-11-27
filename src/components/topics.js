@@ -130,7 +130,7 @@ class Topics extends React.Component {
                                             <div className="cn-author">{item.author.loginname}</div>
                                         </div>
                                         <div className="cn-title">{item.title}</div>
-                                        <Link to={`${this.props.match.url}detail/${item.id}`}>
+                                        <Link to={`${this.props.match.url}/detail/${item.id}`}>
                                             <img src={rightArrow} className="cn-goto-detail" alt="rightArrow" />
                                         </Link>
                                     </div>
