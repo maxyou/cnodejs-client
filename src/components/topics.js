@@ -116,13 +116,13 @@ class Topics extends React.Component {
                     space
                 </StyledDivSpace> */}
                 <StyledDiv>
-                    {this.props.http.loading}
+                    {this.props.topics.loading}
                     {/* <hr /> */}
                     <ul className="cn-ul">
                         {
-                            this.props.http.data.data?
+                            this.props.topics.data.data?
 
-                                this.props.http.data.data.map((item) => <li className="cn-li" key={item.id}>
+                                this.props.topics.data.data.map((item) => <li className="cn-li" key={item.id}>
                                     <div className="cn-topic">
                                         <div className="cn-avatar-container">
                                             {/* <AvatarImg className="cn-avatar" url={item.author.avatar_url} /> */}

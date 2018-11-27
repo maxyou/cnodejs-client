@@ -1,5 +1,5 @@
 import Detail from '../components/detail'
-import {httpGet} from '../actions/http'
+import {httpGet} from '../actions/detail'
 import {connect} from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
