@@ -95,7 +95,7 @@ const StyledDiv = styled.div`
     }
 `
 
-class CNode extends React.Component {
+class Topics extends React.Component {
 
     componentDidMount() {
         this.props.httpGet('/topics')
@@ -121,7 +121,7 @@ class CNode extends React.Component {
                     <ul className="cn-ul">
                         {
                             this.props.http.data.data?
-                                                        
+
                                 this.props.http.data.data.map((item) => <li className="cn-li" key={item.id}>
                                     <div className="cn-topic">
                                         <div className="cn-avatar-container">
@@ -130,7 +130,7 @@ class CNode extends React.Component {
                                             <div className="cn-author">{item.author.loginname}</div>
                                         </div>
                                         <div className="cn-title">{item.title}</div>
-                                        <Link to={`${this.props.match.url}/detail`}>
+                                        <Link to={`${this.props.match.url}/detail/${item.id}`}>
                                             <img src={rightArrow} className="cn-goto-detail" alt="rightArrow" />
                                         </Link>
                                     </div>
@@ -146,4 +146,4 @@ class CNode extends React.Component {
     }
 }
 
-export default CNode
+export default Topics

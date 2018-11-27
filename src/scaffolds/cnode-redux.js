@@ -1,14 +1,15 @@
 import React from 'react';
-import ContainerCNode from '../containers/cnode'
+import ContainerTopics from '../containers/topics'
+import ContainerDetail from '../containers/detail'
 import { Switch, Route, Link } from 'react-router-dom'
 
-function ContainerDetail() {
-    return (
-        <div>
-            detail
-        </div>
-    );
-}
+// function ContainerDetail(props) {
+//     return (
+//         <div>
+//             detail:{props.match.params.id}
+//         </div>
+//     );
+// }
 
 class CNode extends React.Component {
     
@@ -20,9 +21,9 @@ class CNode extends React.Component {
         return (
             <div>
                 <Switch>
-                    <Route exact path={`${this.props.match.url}/`} component={ContainerCNode} />
-                    <Route path={`${this.props.match.url}/topics`} component={ContainerCNode} />
-                    <Route path={`${this.props.match.url}/detail`} component={ContainerDetail} />                                            
+                    <Route exact path={`${this.props.match.url}/`} component={ContainerTopics} />
+                    <Route path={`${this.props.match.url}/topics`} component={ContainerTopics} />
+                    <Route path={`${this.props.match.url}/detail/:id`} component={ContainerDetail} />                                            
                 </Switch>
             </div>
         )

@@ -1,4 +1,4 @@
-import CNode from '../components/cnode'
+import Topics from '../components/topics'
 import {httpGet} from '../actions/http'
 import {connect} from 'react-redux'
 import { withRouter } from 'react-router-dom'
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
 export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(CNode))
+)(Topics))
