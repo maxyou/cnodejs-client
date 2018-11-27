@@ -2,7 +2,10 @@ import {ACTION} from '../actions/http'
 
 const initState = {
     loading: false,
-    topics: []
+    // topics:[]
+    data: {
+        data: []
+    }
 }
 
 const http = (state = initState, action) => {
@@ -13,9 +16,9 @@ const http = (state = initState, action) => {
         case ACTION.HTTP_FAILURE:
             return {...state, loading: false}
         case ACTION.HTTP_SUCCESS:
-            // console.log('ACTION.HTTP_SUCCESS')
-            // console.log(action.payload)
-            return {...state, loading: false, topics: action.payload}
+            console.log('ACTION.HTTP_SUCCESS')
+            console.log(action.payload)
+            return {...state, loading: false, data: action.payload}
         default:
             return state
     }

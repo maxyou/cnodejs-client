@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {AvatarImg} from '../commons/commons'
 import rightArrow from '../commons/svg/right-circle.svg'
+import { Switch, Route, Link } from 'react-router-dom'
 
 const StyledDivSpace = styled.div` 
     background: yellow;    
@@ -98,10 +99,11 @@ class CNode extends React.Component {
 
     componentDidMount() {
         this.props.httpGet('/topics')
+        // console.log(this.props)
     }
 
     render() {
-        // console.log(this.props)
+        console.log(this.props)
         return (
             <div>
                 {/* <StyledDiv2>
@@ -117,19 +119,25 @@ class CNode extends React.Component {
                     {this.props.http.loading}
                     {/* <hr /> */}
                     <ul className="cn-ul">
-                        {this.props.http.topics.map((item) => <li className="cn-li" key={item.id}>
-                            <div className="cn-topic">
-                                <div className="cn-avatar-container">
-                                    {/* <AvatarImg className="cn-avatar" url={item.author.avatar_url} /> */}
-                                    <div className="cn-avatar"><AvatarImg url={item.author.avatar_url} /></div>
-                                    <div className="cn-author">{item.author.loginname}</div>
-                                </div>
-                                <div className="cn-title">{item.title}</div>
-                                {/* <div className="cn-goto-detail">
-                                </div> */}
-                                    <img src={rightArrow} className="cn-goto-detail" alt="rightArrow" />
-                            </div>
-                        </li>)}
+                        {
+                            this.props.http.data.data?
+                                                        
+                                this.props.http.data.data.map((item) => <li className="cn-li" key={item.id}>
+                                    <div className="cn-topic">
+                                        <div className="cn-avatar-container">
+                                            {/* <AvatarImg className="cn-avatar" url={item.author.avatar_url} /> */}
+                                            <div className="cn-avatar"><AvatarImg url={item.author.avatar_url} /></div>
+                                            <div className="cn-author">{item.author.loginname}</div>
+                                        </div>
+                                        <div className="cn-title">{item.title}</div>
+                                        <Link to={`${this.props.match.url}/detail`}>
+                                            <img src={rightArrow} className="cn-goto-detail" alt="rightArrow" />
+                                        </Link>
+                                    </div>
+                                </li>)
+                            
+                            :null
+                        }
                     </ul>
                     {/* {JSON.stringify(this.props.http.topics)} */}
                 </StyledDiv>
