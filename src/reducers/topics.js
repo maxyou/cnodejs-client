@@ -2,10 +2,7 @@ import {ACTION} from '../actions/topics'
 
 const initState = {
     loading: false,
-    // topics:[]
-    data: {
-        data: []
-    }
+    data: []
 }
 
 const topics = (state = initState, action) => {
@@ -16,8 +13,8 @@ const topics = (state = initState, action) => {
         case ACTION.HTTP_FAILURE:
             return {...state, loading: false}
         case ACTION.HTTP_SUCCESS:
-            console.log('ACTION.HTTP_SUCCESS')
-            console.log(action.payload)
+            // console.log('ACTION.HTTP_SUCCESS')
+            // console.log(action.payload)
             return {...state, loading: false, data: action.payload}
         default:
             return state

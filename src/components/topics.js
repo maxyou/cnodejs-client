@@ -120,9 +120,9 @@ class Topics extends React.Component {
                     {/* <hr /> */}
                     <ul className="cn-ul">
                         {
-                            this.props.topics.data.data?
+                            this.props.topics.data?
 
-                                this.props.topics.data.data.map((item) => <li className="cn-li" key={item.id}>
+                                this.props.topics.data.map((item) => <li className="cn-li" key={item.id}>
                                     <div className="cn-topic">
                                         <div className="cn-avatar-container">
                                             {/* <AvatarImg className="cn-avatar" url={item.author.avatar_url} /> */}
