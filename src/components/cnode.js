@@ -104,7 +104,7 @@ class CNode extends React.Component {
         // console.log(this.props)
         return (
             <div>
-                <StyledDiv2>
+                {/* <StyledDiv2>
                     <div className="cn-avatar-container2">
                         <div className="cn-author2">loginname</div>
                         <div className="cn-author22">==loginname</div>
@@ -112,10 +112,10 @@ class CNode extends React.Component {
                 </StyledDiv2>
                 <StyledDivSpace>
                     space
-                </StyledDivSpace>
+                </StyledDivSpace> */}
                 <StyledDiv>
                     {this.props.http.loading}
-                    <hr />
+                    {/* <hr /> */}
                     <ul className="cn-ul">
                         {this.props.http.topics.map((item) => <li className="cn-li" key={item.id}>
                             <div className="cn-topic">
