@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import {AvatarImg} from '../commons/commons'
+import rightArrow from '../commons/svg/right-circle.svg'
+
 const StyledDivSpace = styled.div` 
     background: yellow;    
 `  
@@ -79,7 +81,7 @@ const StyledDiv = styled.div`
                     padding:10px;
                 }
                 .cn-goto-detail{
-                    flex: 0 1 auto;
+                    flex: 0 0 auto;
                     width: 60px;
                     height: 60px;
                     background: green;
@@ -122,8 +124,10 @@ class CNode extends React.Component {
                                     <div className="cn-avatar"><AvatarImg url={item.author.avatar_url} /></div>
                                     <div className="cn-author">{item.author.loginname}</div>
                                 </div>
-                                    <div className="cn-title">{item.title}</div>
-                                    <div className="cn-goto-detail">todetail</div>
+                                <div className="cn-title">{item.title}</div>
+                                {/* <div className="cn-goto-detail">
+                                </div> */}
+                                    <img src={rightArrow} className="cn-goto-detail" alt="rightArrow" />
                             </div>
                         </li>)}
                     </ul>
