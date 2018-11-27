@@ -19,8 +19,8 @@ export function httpGet(url){
         .then(
             res=>{
                 if(res.status===200){
-                    console.log('axios 200')
-                    console.log(res)
+                    // console.log('axios 200')
+                    // console.log(res)
                     // dispatch(httpSuccess(res.data.data))
                     dispatch(httpSuccess(res.data))
                 }
