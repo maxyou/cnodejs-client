@@ -1,5 +1,5 @@
 import Detail from '../components/detail'
-import {httpGet} from '../actions/detail'
+import {httpGet, initState} from '../actions/detail'
 import {connect} from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    httpGet: (v) => dispatch(httpGet(v))
+    httpGet: (v) => dispatch(httpGet(v)),
+    initState: () => dispatch(initState())
 })
 
 export default withRouter(connect(

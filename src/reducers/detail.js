@@ -1,13 +1,15 @@
 import {ACTION} from '../actions/detail'
 
 const initState = {
-    detailtest: 'in detail',
+    // detailtest: 'in detail',
     loading: false,
     data: {}
 }
 
 const detail = (state = initState, action) => {
     switch (action.type) {
+        case ACTION.INIT_STATE:
+            return initState
         case ACTION.HTTP_REQUEST:
             // console.log('ACTION.HTTP_REQUEST')
             return {...state, loading: true}

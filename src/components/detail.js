@@ -4,11 +4,15 @@ import {AvatarImg} from '../commons/commons'
 import { Switch, Route, Link } from 'react-router-dom'
 
 class Detail extends React.Component {
-
+    
     componentDidMount() {
         this.props.httpGet(`/topic/${this.props.match.params.id}`)
     }
     
+    componentWillUnmount(){
+        this.props.initState()
+    }
+
     render() {
         console.log('detail.props')
         console.log(this.props)

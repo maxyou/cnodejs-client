@@ -3,11 +3,13 @@ import axios from 'axios'
 export const ACTION = {
     HTTP_REQUEST: 'detail_http_request',
     HTTP_FAILURE: 'detail_http_failure',
-    HTTP_SUCCESS: 'detail_http_success'
+    HTTP_SUCCESS: 'detail_http_success',
+    INIT_STATE: 'detail_init_state'
 }
 export const httpRequest = () => ({ type: ACTION.HTTP_REQUEST })
 export const httpFailure = (v) => ({ type: ACTION.HTTP_FAILURE, payload: v })
 export const httpSuccess = (v) => ({ type: ACTION.HTTP_SUCCESS, payload: v })
+export const initState = () => ({ type: ACTION.INIT_STATE })
 
 export function httpGet(url){
 
@@ -19,7 +21,7 @@ export function httpGet(url){
         .then(
             res=>{
                 if(res.status===200){
-                    console.log('detail axios 200')
+                    // console.log('detail axios 200')
                     // console.log(res)
                     dispatch(httpSuccess(res.data))
                 }else{

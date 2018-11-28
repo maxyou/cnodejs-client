@@ -1,7 +1,7 @@
 import {ACTION} from '../actions/topics'
 
 const initState = {
-    detailtest: 'in topics...',
+    // detailtest: 'in topics...',
     loading: false,
     data: []
 }
