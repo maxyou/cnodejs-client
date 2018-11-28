@@ -1,15 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
-import {AvatarImg} from '../commons/commons'
+import { AvatarImg } from '../commons/commons'
 import { Switch, Route, Link } from 'react-router-dom'
 
+function Post({data}) {
+    console.log(data)
+    return (
+        <div>
+            <div>{data.title}</div>
+            <div>
+                <span>CreateAt:{data.create_at}</span>{' - '}
+                <span>Author:{data.author.loginname}</span>{' - '}
+                <span>VisitCount:{data.visit_count}</span>{' - '}
+                <span>From:{data.tab}</span>
+            </div>
+            <hr/>
+            <div dangerouslySetInnerHTML={{ __html: data.content }} />            
+        </div>
+    );
+}
+
 class Detail extends React.Component {
-    
+
     componentDidMount() {
         this.props.httpGet(`/topic/${this.props.match.params.id}`)
     }
-    
-    componentWillUnmount(){
+
+    componentWillUnmount() {
         this.props.initState()
     }
 
@@ -19,20 +36,20 @@ class Detail extends React.Component {
         return (
             <div>
                 detail id:{this.props.match.params.id}
-                <hr/>
+                <hr />
                 {/* {JSON.stringify(this.props.detail)} */}
 
                 <div>
-                    {this.props.detail.data?
-                        (this.props.detail.data.data?
-                            <div dangerouslySetInnerHTML={{__html:this.props.detail.data.data.content}}>
-                                
+                    {this.props.detail.data ?
+                        (this.props.detail.data.data ?
+                            <div>
+                                <Post data={this.props.detail.data.data}/>
                             </div>
-                            :null)
-                        :null
+                            : null)
+                        : null
                     }
                 </div>
-                <hr/>
+                <hr />
                 <div>
                 </div>
 
