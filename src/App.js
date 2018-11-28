@@ -21,7 +21,7 @@ const store = createStore(
 )
 const DivFull = styled.div`
     height:100%;
-    background-color: green;
+    // background-color: green;
 `
 class App extends Component {
   render() {

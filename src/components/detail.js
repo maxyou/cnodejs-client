@@ -1,10 +1,56 @@
 import React from 'react'
 import styled from 'styled-components'
-import { AvatarImg } from '../commons/commons'
-import { Switch, Route, Link } from 'react-router-dom'
+import {AvatarImg} from '../commons/commons'
+
+const StyledReply = styled.div` 
+    
+    display: flex;
+    align-items: flex-start;
+
+    .cn-avatar{
+        flex: 0 1 auto;
+        font-size: 0.8em;   
+        padding: 2px;
+    }
+
+    .cn-reply{
+        flex: 1 1 auto;
+        background: blue;
+        padding: 3px;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+
+        .cn-reply-name{
+            flex: 0 1 auto;
+            background: yellow;
+            font-size: 0.8em;   
+        }
+        .cn-reply-content{
+            flex: 1 1 auto;
+            background: pink;
+            font-size: 0.8em;   
+        }
+    }
+`
+function Reply({item}){
+    return(
+        <StyledReply >
+            <div className="cn-avatar"><AvatarImg url={item.author.avatar_url} /></div>
+            <div className="cn-reply">
+                <div className="cn-reply-name">
+                    {item.author.loginname}
+                </div>
+                <div className="cn-reply-content">
+                    <div dangerouslySetInnerHTML={{ __html: item.content }} />
+                </div>
+            </div>
+        </StyledReply>
+    )
+}
 
 function Post({data}) {
-    console.log(data)
+    // console.log(data)
     return (
         <div>
             <div>{data.title}</div>
@@ -16,6 +62,8 @@ function Post({data}) {
             </div>
             <hr/>
             <div dangerouslySetInnerHTML={{ __html: data.content }} />            
+            <hr/>
+            {data.replies.map((item)=><Reply key={item.id} item={item}></Reply>)}
         </div>
     );
 }
@@ -31,30 +79,18 @@ class Detail extends React.Component {
     }
 
     render() {
-        console.log('detail.props')
+        // console.log('detail.props')
         console.log(this.props)
-        return (
-            <div>
-                detail id:{this.props.match.params.id}
-                <hr />
-                {/* {JSON.stringify(this.props.detail)} */}
 
+        if(this.props.detail.data && this.props.detail.data.data){
+            return (
                 <div>
-                    {this.props.detail.data ?
-                        (this.props.detail.data.data ?
-                            <div>
-                                <Post data={this.props.detail.data.data}/>
-                            </div>
-                            : null)
-                        : null
-                    }
+                    <Post data={this.props.detail.data.data}/>
                 </div>
-                <hr />
-                <div>
-                </div>
-
-            </div>
-        )
+            )
+        }else{
+            return null
+        }
     }
 }
 
