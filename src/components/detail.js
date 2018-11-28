@@ -21,7 +21,9 @@ class Detail extends React.Component {
                 <div>
                     {this.props.detail.data?
                         (this.props.detail.data.data?
-                            this.props.detail.data.data.content
+                            <div dangerouslySetInnerHTML={{__html:this.props.detail.data.data.content}}>
+                                
+                            </div>
                             :null)
                         :null
                     }
