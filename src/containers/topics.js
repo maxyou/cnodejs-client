@@ -4,7 +4,8 @@ import {connect} from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = state => ({
-    topics:state.topics
+    topics:state.topics,
+    tabfilter:state.tabfilter
 })
 
 const mapDispatchToProps = dispatch => ({

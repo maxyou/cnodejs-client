@@ -1,5 +1,6 @@
 import React from 'react'
 import {TAB_FILTER} from '../reducers/tabfilter'
+import { Switch, Route, Link } from 'react-router-dom'
 
 class TabFilter extends React.Component{
 
@@ -21,7 +22,11 @@ class TabFilter extends React.Component{
                     disabled={this.props.tabfilter===TAB_FILTER.ALL}>{TAB_FILTER.ALL}</button>
                 <button 
                     onClick={()=>this.handleChange(TAB_FILTER.PRIMARY)}
-                    disabled={this.props.tabfilter===TAB_FILTER.PRIMARY}>{TAB_FILTER.PRIMARY}</button>
+                    disabled={this.props.tabfilter===TAB_FILTER.PRIMARY}>
+                    {/* <Link to={{pathname:this.props.match.url, search:"?tab=primary"}}> */}
+                    {TAB_FILTER.PRIMARY}
+                    {/* </Link> */}
+                    </button>
                 <button 
                     onClick={()=>this.handleChange(TAB_FILTER.SHARE)}
                     disabled={this.props.tabfilter===TAB_FILTER.SHARE}>{TAB_FILTER.SHARE}</button>

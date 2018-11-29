@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {AvatarImg} from '../commons/commons'
+import {tabfilterQueryStr} from '../reducers/tabfilter'
 import rightArrow from '../commons/svg/right-circle.svg'
 import { Switch, Route, Link } from 'react-router-dom'
 
@@ -98,8 +99,15 @@ const StyledDiv = styled.div`
 class Topics extends React.Component {
 
     componentDidMount() {
-        this.props.httpGet('/topics')
+        this.props.httpGet('/topics' + tabfilterQueryStr(this.props.tabfilter))
         // console.log(this.props)
+    }
+
+    componentDidUpdate(prevProps){
+        if(this.props.tabfilter!==prevProps.tabfilter){
+            this.props.httpGet('/topics' + tabfilterQueryStr(this.props.tabfilter))
+            console.log('componentDidUpdate')
+        }
     }
 
     render() {
@@ -116,8 +124,10 @@ class Topics extends React.Component {
                     space
                 </StyledDivSpace> */}
                 <StyledDiv>
-                    {this.props.topics.loading}
-                    {/* <hr /> */}
+                    {/* <hr />
+                    {this.props.topics.loading}{'---'}
+                    {this.props.tabfilter}
+                    <hr /> */}
                     <ul className="cn-ul">
                         {
                             this.props.topics.data?

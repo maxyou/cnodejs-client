@@ -11,7 +11,7 @@ export const httpSuccess = (v) => ({ type: ACTION.HTTP_SUCCESS, payload: v })
 
 export function httpGet(url){
 
-    // console.log('action httpGet:' + url)
+    console.log('action httpGet:' + url)
     return function(dispatch){
         dispatch(httpRequest())
 
