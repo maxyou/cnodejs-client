@@ -49,7 +49,7 @@ function Reply({item}){
     )
 }
 
-function Post({data}) {
+function Topic({data}) {
     // console.log(data)
     return (
         <div>
@@ -85,7 +85,7 @@ class Detail extends React.Component {
         if(this.props.detail.data && this.props.detail.data.data){
             return (
                 <div>
-                    <Post data={this.props.detail.data.data}/>
+                    <Topic data={this.props.detail.data.data}/>
                 </div>
             )
         }else{
