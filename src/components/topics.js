@@ -33,16 +33,16 @@ const StyledDiv2 = styled.div`
     }
 `   
 const StyledDiv = styled.div`    
-    background: pink;
+    // background: pink;
     .cn-ul{
         margin: 3px;
         padding: 3px;
-        background: yellow;
+        // background: yellow;
 
         .cn-li{
             margin: 3px;
             padding: 3px;
-            background: red;
+            // background: red;
 
             .cn-topic{
                 margin: 3px;
@@ -56,7 +56,7 @@ const StyledDiv = styled.div`
                     flex: 0 0 auto;
                     width: 80px;
                     height: 80px;
-                    background: green;
+                    // background: green;
                     display: flex;
                     flex-direction: column;    
                     align-items: center;
@@ -79,14 +79,14 @@ const StyledDiv = styled.div`
     
                 .cn-title{
                     flex: 1 1 auto;
-                    background: grey;
+                    // background: grey;
                     padding:10px;
                 }
                 .cn-goto-detail{
                     flex: 0 0 auto;
                     width: 60px;
                     height: 60px;
-                    background: green;
+                    // background: green;
                     font-size: 0.5 rem;
                 }
     
