@@ -2,6 +2,7 @@ import React from 'react'
 // import styled from 'styled-components'
 import { Switch, Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
+import CNodeTopics from './cnode-redux'
 
 const H2Red = styled.h2`background:red;`
 const H2Green = styled.h2`background:green;`
@@ -51,17 +52,22 @@ const DivFull = styled.div`
 `
 const FlexContainer = styled.div`
     height:100%;
+    background-color: blue;
     display: flex;
-    flex-direction: column
-`
+    flex-direction: column;
+    `
 const FlexMain = styled.div`
     flex: 1 1 auto;
+    overflow: scroll;
     background-color: grey;
 `
 const FlexBottom = styled.div`
-    flex: 0 1 auto;
+    flex: 0 0 auto;
+    height: 50px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    background-color: pink;
 `
 class Pages extends React.Component {
     render() {
@@ -75,14 +81,14 @@ class Pages extends React.Component {
                             <Route exact path={`${this.props.match.url}/`} component={Home} />
                             <Route path={`${this.props.match.url}/home`} component={Home} />
                             <Route path={`${this.props.match.url}/about`} component={About} />
-                            <Route path={`${this.props.match.url}/topics`} component={Topics} />
+                            <Route path={`${this.props.match.url}/topics`} component={CNodeTopics} />
                             <Route path={`${this.props.match.url}/funcs`} component={Funcs} />
                         </Switch>
                     </FlexMain>
                     <FlexBottom>
-                        <Link to={`${this.props.match.url}/topics`}>to topics</Link>
-                        <Link to={`${this.props.match.url}/funcs`}>to funcs</Link>
-                        <Link to={`${this.props.match.url}/about`}>to about</Link>
+                        <Link to={`${this.props.match.url}/topics`}>topics</Link>
+                        <Link to={`${this.props.match.url}/funcs`}>funcs</Link>
+                        <Link to={`${this.props.match.url}/about`}>about</Link>
                     </FlexBottom>
                 </FlexContainer>
             </DivFull>
