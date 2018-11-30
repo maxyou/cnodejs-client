@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    navi: (v) => dispatch(paginate(v))
+    changePage: (v) => dispatch(paginate(v))
 })
 export default withRouter(connect(
     mapStateToProps,

@@ -72,6 +72,7 @@ class Paginate extends React.Component{
         // this.props.changeFilter(v)
         console.log(current)
         this.setState({current:current})
+        this.props.changePage(current)
     }
 
     render(){

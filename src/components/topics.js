@@ -98,14 +98,39 @@ const StyledDiv = styled.div`
 
 class Topics extends React.Component {
 
-    componentDidMount() {
-        this.props.httpGet('/topics' + tabfilterQueryStr(this.props.tabfilter))
-        // console.log(this.props)
+    constructor(props){
+        super(props)
+
+        // console.log('----constructor----')
+        // console.log(this.props.paginate)
+        // console.log(this.props.tabfilter)
+        
     }
 
+    httpUpdate(){
+        this.props.httpGet('/topics' 
+        + tabfilterQueryStr(this.props.tabfilter)
+        + '&&page=' + this.props.paginate)
+    }
+
+    componentDidMount() {
+        // this.props.httpGet('/topics' + tabfilterQueryStr(this.props.tabfilter))
+        this.httpUpdate()
+    }
+    
     componentDidUpdate(prevProps){
-        if(this.props.tabfilter!==prevProps.tabfilter){
-            this.props.httpGet('/topics' + tabfilterQueryStr(this.props.tabfilter))
+        // console.log('----componentDidUpdate----')
+        // console.log(this.props.paginate)
+        // console.log(prevProps.paginate)
+        // console.log(this.props.tabfilter)
+        // console.log(prevProps.tabfilter)
+        if(this.props.tabfilter!==prevProps.tabfilter
+            || this.props.paginate!==prevProps.paginate
+            ){
+            // this.props.httpGet('/topics' 
+            //     + tabfilterQueryStr(this.props.tabfilter)
+            //     + '&&page=' + this.props.paginate)
+            this.httpUpdate()
             console.log('componentDidUpdate')
         }
     }
