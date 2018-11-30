@@ -80,7 +80,7 @@ class Detail extends React.Component {
 
     render() {
         // console.log('detail.props')
-        console.log(this.props)
+        // console.log(this.props)
 
         if(this.props.detail.data && this.props.detail.data.data){
             return (

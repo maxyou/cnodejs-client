@@ -3,35 +3,35 @@ import styled from 'styled-components'
 import {AvatarImg} from '../commons/commons'
 import {tabfilterQueryStr} from '../reducers/tabfilter'
 import rightArrow from '../commons/svg/right-circle.svg'
-import { Switch, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const StyledDivSpace = styled.div` 
-    background: yellow;    
-`  
-const StyledDiv2 = styled.div` 
-    background: red;
-    .cn-avatar-container2{
-        width: 200px;
-        height: 200px;
-        background: grey;
-        display: flex;
-        flex-direction: column;    
-        align-items: center;
-        justify-content:center;
+// const StyledDivSpace = styled.div` 
+//     background: yellow;    
+// `  
+// const StyledDiv2 = styled.div` 
+//     background: red;
+//     .cn-avatar-container2{
+//         width: 200px;
+//         height: 200px;
+//         background: grey;
+//         display: flex;
+//         flex-direction: column;    
+//         align-items: center;
+//         justify-content:center;
 
-        .cn-author2{
-            flex: 0 1 auto;
-            background: blue;
-            font-size: 0.8em;   
-            padding: 20px;
-        }
-        .cn-author22{
-            flex: 0 1 auto;
-            background: pink;
-            font-size: 0.8em;   
-        }
-    }
-`   
+//         .cn-author2{
+//             flex: 0 1 auto;
+//             background: blue;
+//             font-size: 0.8em;   
+//             padding: 20px;
+//         }
+//         .cn-author22{
+//             flex: 0 1 auto;
+//             background: pink;
+//             font-size: 0.8em;   
+//         }
+//     }
+// `   
 const StyledDiv = styled.div`    
     // background: pink;
     .cn-ul{
@@ -131,7 +131,7 @@ class Topics extends React.Component {
             //     + tabfilterQueryStr(this.props.tabfilter)
             //     + '&&page=' + this.props.paginate)
             this.httpUpdate()
-            console.log('componentDidUpdate')
+            // console.log('componentDidUpdate')
         }
     }
 

@@ -1,17 +1,15 @@
 import React from 'react'
-import {TAB_FILTER, tabfilterStr} from '../reducers/tabfilter'
-import { Switch, Route, Link } from 'react-router-dom'
 
-function calcButtonArray(current=1, ext=2, maxRight){
+function calcButtonArray(paginate=1, ext=2, maxRight){
     // required:
-    //  current <= maxright
+    //  paginate <= maxright
 
-    let ba = [current]
+    let ba = [paginate]
     for(let i = 0; i < ext; i++){
-        ba.push((current+1)+i)
+        ba.push((paginate+1)+i)
     }
     for(let i = 0; i < ext; i++){
-        ba.unshift((current-1)-i)
+        ba.unshift((paginate-1)-i)
     }
     // console.log(ba)
     while(1){
@@ -41,15 +39,15 @@ function calcButtonArray(current=1, ext=2, maxRight){
     return ba
 }
 
-function PageRound({current, ext, maxRight, nav}) {
+function PageRound({paginate, ext, maxRight, nav}) {
     // console.log(data)
-    const ba = calcButtonArray(current, ext, maxRight)
+    const ba = calcButtonArray(paginate, ext, maxRight)
     return (
         <div>
             {ba.map((item)=><button 
                     key={item} 
                     onClick={()=>nav(item)}
-                    disabled={item===current}
+                    disabled={item===paginate}
                 >{item}</button>)}
         </div>
     );
@@ -62,25 +60,26 @@ class Paginate extends React.Component{
 
         this.handleChange = this.handleChange.bind(this)
         this.state = {
-            current:1
+            paginate:this.props.paginate
         }
-        // this.state = {...this.props.current}
-        // console.log(this.state)
+        // this.state = {...this.props.paginate}
+        console.log(this.props.paginate)
+        console.log(this.state)
     }
 
-    handleChange(current){
+    handleChange(paginate){
         // this.props.changeFilter(v)
-        console.log(current)
-        this.setState({current:current})
-        this.props.changePage(current)
+        console.log(paginate)
+        this.setState({paginate:paginate})
+        this.props.changePage(paginate)
     }
 
     render(){
         return (
             <div>
-                current:{this.state.current}
+                paginate:{this.state.paginate}
                 <hr/>
-                <PageRound current={this.state.current} ext={3} maxRight={100} nav={this.handleChange}/>
+                <PageRound paginate={this.state.paginate} ext={3} maxRight={100} nav={this.handleChange}/>
                 <hr/>
                 {/* <button 
                     onClick={()=>this.handleChange(TAB_FILTER.ALL)}

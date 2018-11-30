@@ -1,6 +1,5 @@
 import React from 'react'
 import {TAB_FILTER, tabfilterStr} from '../reducers/tabfilter'
-import { Switch, Route, Link } from 'react-router-dom'
 
 class TabFilter extends React.Component{
 

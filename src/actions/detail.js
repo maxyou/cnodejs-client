@@ -13,7 +13,7 @@ export const initState = () => ({ type: ACTION.INIT_STATE })
 
 export function httpGet(url){
 
-    console.log('detail action httpGet:' + url)
+    // console.log('detail action httpGet:' + url)
     return function(dispatch){
         dispatch(httpRequest())
 
