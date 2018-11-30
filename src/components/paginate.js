@@ -46,7 +46,11 @@ function PageRound({current, ext, maxRight, nav}) {
     const ba = calcButtonArray(current, ext, maxRight)
     return (
         <div>
-            {ba.map((item)=><button key={item} onClick={()=>nav(item)}>{item}</button>)}
+            {ba.map((item)=><button 
+                    key={item} 
+                    onClick={()=>nav(item)}
+                    disabled={item===current}
+                >{item}</button>)}
         </div>
     );
 }
