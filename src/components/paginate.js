@@ -62,14 +62,12 @@ class Paginate extends React.Component{
         this.state = {
             paginate:this.props.paginate
         }
-        // this.state = {...this.props.paginate}
-        console.log(this.props.paginate)
-        console.log(this.state)
+        // console.log(this.props.paginate)
+        // console.log(this.state)
     }
 
     handleChange(paginate){
-        // this.props.changeFilter(v)
-        console.log(paginate)
+        // console.log(paginate)
         this.setState({paginate:paginate})
         this.props.changePage(paginate)
     }
@@ -77,10 +75,10 @@ class Paginate extends React.Component{
     render(){
         return (
             <div>
-                paginate:{this.state.paginate}
-                <hr/>
-                <PageRound paginate={this.state.paginate} ext={3} maxRight={100} nav={this.handleChange}/>
-                <hr/>
+                {/* paginate:{this.state.paginate}
+                <hr/> */}
+                <PageRound paginate={this.state.paginate} ext={5} maxRight={50} nav={this.handleChange}/>
+                {/* <hr/> */}
                 {/* <button 
                     onClick={()=>this.handleChange(TAB_FILTER.ALL)}
                     disabled={this.props.tabfilter===TAB_FILTER.ALL}>{tabfilterStr(TAB_FILTER.ALL)}</button>
