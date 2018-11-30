@@ -1,4 +1,5 @@
 import React from 'react';
+import Paginate from '../containers/paginate'
 import TabFilter from '../containers/tabfilter'
 import Topics from '../containers/topics'
 import Detail from '../containers/detail'
@@ -8,6 +9,7 @@ function ContainerTopics() {
     return (
         <div>
             <TabFilter />
+            <Paginate />
             <Topics />
         </div>
     );
