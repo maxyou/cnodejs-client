@@ -59,7 +59,7 @@ const FlexContainer = styled.div`
 const FlexMain = styled.div`
     flex: 1 1 auto;
     overflow: scroll;
-    background-color: grey;
+    background-color: silver;
 `
 const FlexBottom = styled.div`
     flex: 0 0 auto;
@@ -67,7 +67,7 @@ const FlexBottom = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: pink;
+    background-color: skyblue;
 `
 class Pages extends React.Component {
     render() {
