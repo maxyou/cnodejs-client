@@ -130,6 +130,7 @@ class Topics extends React.Component {
             // this.props.httpGet('/topics' 
             //     + tabfilterQueryStr(this.props.tabfilter)
             //     + '&&page=' + this.props.paginate)
+            this.props.initState()
             this.httpUpdate()
             // console.log('componentDidUpdate')
         }

@@ -1,5 +1,5 @@
 import Topics from '../components/topics'
-import {httpGet} from '../actions/topics'
+import {httpGet, initState} from '../actions/topics'
 import {connect} from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    httpGet: (v) => dispatch(httpGet(v))
+    httpGet: (v) => dispatch(httpGet(v)),
+    initState: () => dispatch(initState())
 })
 
 export default withRouter(connect(
