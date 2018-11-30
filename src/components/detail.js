@@ -53,16 +53,27 @@ function Reply({item}){
     )
 }
 
+function FormateTime(t){
+    let td = new Date(t)
+    let str = td.getFullYear()+'-'+
+            (td.getMonth()+1)+'-'+
+            td.getDate()+' '+
+            td.getHours()+':'+
+            td.getMinutes()
+    
+            return str
+}
+
 function Topic({data}) {
     // console.log(data)
     return (
         <StyledTopic>
             <div>{data.title}</div>
             <div>
-                <span>CreateAt:{data.create_at}</span>{' - '}
-                <span>Author:{data.author.loginname}</span>{' - '}
-                <span>VisitCount:{data.visit_count}</span>{' - '}
-                <span>From:{data.tab}</span>
+                <span>{FormateTime(data.create_at)}</span>{' '}
+                <span>{data.author.loginname}</span>{' '}
+                <span>{data.visit_count}read</span>{' '}
+                <span>tab:{data.tab}</span>
             </div>
             <hr/>
             <div dangerouslySetInnerHTML={{ __html: data.content }} />            
