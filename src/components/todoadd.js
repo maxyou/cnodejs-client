@@ -26,15 +26,15 @@ class TodoAdd extends React.Component {
     render() {
         return (
             <div>
-                <h2>total todos:{this.props.todos.length}</h2>
+                <h2>Total:{this.props.todos.length}</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         <input type="text"
                             value={this.state.value}
                             onChange={this.handleChange} />
                     </label>
-                    <input type="submit" value="Submit" />Modify
-            </form>
+                    <input type="submit" value="Submit" />
+                </form>
             </div>
         )
     }

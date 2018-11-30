@@ -15,7 +15,7 @@ class TodoFilter extends React.Component{
 
     render(){
         return (
-            <div>filter as:
+            <div>
                 <button 
                     onClick={()=>this.handleChange(FILTER.ALL)}
                     disabled={this.props.filter===FILTER.ALL}>{FILTER.ALL}</button>

@@ -3,6 +3,7 @@ import React from 'react'
 import { Switch, Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import CNodeTopics from './cnode-redux'
+import Todo from './todo'
 
 const H2Red = styled.h2`background:red;`
 const H2Green = styled.h2`background:green;`
@@ -82,13 +83,13 @@ class Pages extends React.Component {
                             <Route path={`${this.props.match.url}/home`} component={Home} />
                             <Route path={`${this.props.match.url}/about`} component={About} />
                             <Route path={`${this.props.match.url}/topics`} component={CNodeTopics} />
-                            <Route path={`${this.props.match.url}/funcs`} component={Funcs} />
+                            <Route path={`${this.props.match.url}/funcs`} component={Todo} />
                         </Switch>
                     </FlexMain>
                     <FlexBottom>
-                        <Link to={`${this.props.match.url}/topics`}>topics</Link>
-                        <Link to={`${this.props.match.url}/funcs`}>funcs</Link>
-                        <Link to={`${this.props.match.url}/about`}>about</Link>
+                        <Link to={`${this.props.match.url}/topics`}>cnode</Link>
+                        <Link to={`${this.props.match.url}/funcs`}>todo</Link>
+                        <Link to={`${this.props.match.url}/about`}>me</Link>
                     </FlexBottom>
                 </FlexContainer>
             </DivFull>

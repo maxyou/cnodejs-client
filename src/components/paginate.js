@@ -1,4 +1,9 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const StyledDiv = styled.div` 
+    margin: 5px;
+`  
 
 function calcButtonArray(paginate=1, ext=2, maxRight){
     // required:
@@ -75,32 +80,9 @@ class Paginate extends React.Component{
     render(){
         return (
             <div>
-                {/* paginate:{this.state.paginate}
-                <hr/> */}
-                <PageRound paginate={this.state.paginate} ext={5} maxRight={50} nav={this.handleChange}/>
-                {/* <hr/> */}
-                {/* <button 
-                    onClick={()=>this.handleChange(TAB_FILTER.ALL)}
-                    disabled={this.props.tabfilter===TAB_FILTER.ALL}>{tabfilterStr(TAB_FILTER.ALL)}</button>
-                <button 
-                    onClick={()=>this.handleChange(TAB_FILTER.PRIMARY)}
-                    disabled={this.props.tabfilter===TAB_FILTER.PRIMARY}>
-                    <Link to={{pathname:this.props.match.url, search:"?tab=primary"}}>
-                    {tabfilterStr(TAB_FILTER.PRIMARY)}
-                    </Link>
-                    </button>
-                <button 
-                    onClick={()=>this.handleChange(TAB_FILTER.SHARE)}
-                    disabled={this.props.tabfilter===TAB_FILTER.SHARE}>{tabfilterStr(TAB_FILTER.SHARE)}</button>
-                <button 
-                    onClick={()=>this.handleChange(TAB_FILTER.ASK)}
-                    disabled={this.props.tabfilter===TAB_FILTER.ASK}>{tabfilterStr(TAB_FILTER.ASK)}</button>
-                <button 
-                    onClick={()=>this.handleChange(TAB_FILTER.JOB)}
-                    disabled={this.props.tabfilter===TAB_FILTER.JOB}>{tabfilterStr(TAB_FILTER.JOB)}</button>
-                <button 
-                    onClick={()=>this.handleChange(TAB_FILTER.TEST)}
-                    disabled={this.props.tabfilter===TAB_FILTER.TEST}>{tabfilterStr(TAB_FILTER.TEST)}</button> */}
+                <StyledDiv>
+                    <PageRound paginate={this.state.paginate} ext={5} maxRight={50} nav={this.handleChange}/>
+                </StyledDiv>
             </div>
         )
     }

@@ -2,8 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import {AvatarImg} from '../commons/commons'
 
+const StyledTopic = styled.div` 
+    margin: 5px;
+`
 const StyledReply = styled.div` 
     
+    margin: 5px;
     display: flex;
     align-items: flex-start;
 
@@ -15,7 +19,7 @@ const StyledReply = styled.div`
 
     .cn-reply{
         flex: 1 1 auto;
-        background: blue;
+        // background: blue;
         padding: 3px;
         display: flex;
         flex-direction: column;
@@ -23,12 +27,12 @@ const StyledReply = styled.div`
 
         .cn-reply-name{
             flex: 0 1 auto;
-            background: yellow;
+            // background: yellow;
             font-size: 0.8em;   
         }
         .cn-reply-content{
             flex: 1 1 auto;
-            background: pink;
+            // background: pink;
             font-size: 0.8em;   
         }
     }
@@ -52,7 +56,7 @@ function Reply({item}){
 function Topic({data}) {
     // console.log(data)
     return (
-        <div>
+        <StyledTopic>
             <div>{data.title}</div>
             <div>
                 <span>CreateAt:{data.create_at}</span>{' - '}
@@ -64,7 +68,7 @@ function Topic({data}) {
             <div dangerouslySetInnerHTML={{ __html: data.content }} />            
             <hr/>
             {data.replies.map((item)=><Reply key={item.id} item={item}></Reply>)}
-        </div>
+        </StyledTopic>
     );
 }
 

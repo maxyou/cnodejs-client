@@ -1,5 +1,10 @@
 import React from 'react'
 import {TAB_FILTER, tabfilterStr} from '../reducers/tabfilter'
+import styled from 'styled-components'
+
+const StyledDiv = styled.div` 
+    margin: 5px;
+`  
 
 class TabFilter extends React.Component{
 
@@ -16,6 +21,7 @@ class TabFilter extends React.Component{
     render(){
         return (
             <div>
+            <StyledDiv>
                 <button 
                     onClick={()=>this.handleChange(TAB_FILTER.ALL)}
                     disabled={this.props.tabfilter===TAB_FILTER.ALL}>{tabfilterStr(TAB_FILTER.ALL)}</button>
@@ -38,6 +44,7 @@ class TabFilter extends React.Component{
                 <button 
                     onClick={()=>this.handleChange(TAB_FILTER.TEST)}
                     disabled={this.props.tabfilter===TAB_FILTER.TEST}>{tabfilterStr(TAB_FILTER.TEST)}</button>
+            </StyledDiv>
             </div>
         )
     }
