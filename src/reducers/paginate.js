@@ -1,12 +1,18 @@
 import {ACTION} from '../actions/paginate'
 
-const initState = 1
+const initState = {
+        current:1,
+        maxPaginate:50
+    }
 
 const paginate = (state = initState, action) => {
     switch (action.type) {
         case ACTION.NAVI:
-            console.log('reducer paginate:'+action.payload)
-            return state = action.payload
+            console.log('reducer current:'+action.payload)
+            return {...state, current:action.payload}
+        case ACTION.MAX_PAGINATE:
+            console.log('reducer max paginate:'+action.payload)
+            return {...state, maxPaginate:action.payload}
         default:
             return state
     }

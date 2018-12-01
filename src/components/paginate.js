@@ -5,16 +5,16 @@ const StyledDiv = styled.div`
     margin: 5px;
 `  
 
-function calcButtonArray(paginate=1, ext=2, maxRight){
+function calcButtonArray(current=1, ext=2, maxRight){
     // required:
-    //  paginate <= maxright
+    //  current <= maxright
 
-    let ba = [paginate]
+    let ba = [current]
     for(let i = 0; i < ext; i++){
-        ba.push((paginate+1)+i)
+        ba.push((current+1)+i)
     }
     for(let i = 0; i < ext; i++){
-        ba.unshift((paginate-1)-i)
+        ba.unshift((current-1)-i)
     }
     // console.log(ba)
     while(1){
@@ -44,15 +44,18 @@ function calcButtonArray(paginate=1, ext=2, maxRight){
     return ba
 }
 
-function PageRound({paginate, ext, maxRight, nav}) {
-    // console.log(data)
-    const ba = calcButtonArray(paginate, ext, maxRight)
+function PageRound({current, ext, maxRight, nav}) {
+    const ba = calcButtonArray(current, ext, maxRight)
+    console.log(current)
+    console.log(ext)
+    console.log(maxRight)
+    console.log(ba)
     return (
         <div>
             {ba.map((item)=><button 
                     key={item} 
                     onClick={()=>nav(item)}
-                    disabled={item===paginate}
+                    disabled={item===current}
                 >{item}</button>)}
         </div>
     );
@@ -65,23 +68,27 @@ class Paginate extends React.Component{
 
         this.handleChange = this.handleChange.bind(this)
         this.state = {
-            paginate:this.props.paginate
+            current : props.paginate.current,
+            ext : 5
         }
         // console.log(this.props.paginate)
         // console.log(this.state)
     }
 
-    handleChange(paginate){
+    handleChange(current){
         // console.log(paginate)
-        this.setState({paginate:paginate})
-        this.props.changePage(paginate)
+        this.setState({current:current})
+        this.props.changePage(current)
     }
 
     render(){
+        console.log(this.props)
+        console.log(this.state)
         return (
             <div>
                 <StyledDiv>
-                    <PageRound paginate={this.state.paginate} ext={5} maxRight={50} nav={this.handleChange}/>
+                    <PageRound current={this.state.current} ext={this.state.ext} 
+                        maxRight={this.props.paginate.maxPaginate} nav={this.handleChange}/>
                 </StyledDiv>
             </div>
         )
