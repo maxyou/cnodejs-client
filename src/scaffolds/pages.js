@@ -7,7 +7,7 @@ import Todo from './todo'
 
 const H2Red = styled.h2`background:red;`
 const H2Green = styled.h2`background:green;`
-const H2Yellow = styled.h2`background:yellow;:hover{color:red}`
+const H2Hover = styled.h2`:hover{color:red}`
 
 const HH = styled.h2.attrs({
     colo2r: props=>props.colo3r
@@ -35,7 +35,7 @@ function Funcs() {
 function About() {
     return (
         <div>
-            <H2Red as={H2Yellow}>About</H2Red>
+            About me:
         </div>
     );
 }
@@ -88,9 +88,9 @@ class Pages extends React.Component {
                         </Switch>
                     </FlexMain>
                     <FlexBottom>
-                        <Link to={`${this.props.match.url}/cnode`}>cnode</Link>
-                        <Link to={`${this.props.match.url}/todo`}>todo</Link>
-                        <Link to={`${this.props.match.url}/about`}>me</Link>
+                        <Link to={`${this.props.match.url}/cnode`}>CNode</Link>
+                        <Link to={`${this.props.match.url}/todo`}>Todo</Link>
+                        <Link to={`${this.props.match.url}/about`}>Me</Link>
                     </FlexBottom>
                 </FlexContainer>
             </DivFull>
