@@ -34,7 +34,7 @@ class App extends Component {
                 <Link to="/about">to about</Link>{'  '}
                 <Link to="/topics">to topics</Link> */}
                 <Switch>
-                  <Route exact path="/" render={()=><Redirect to="/cnode-redux" />} />
+                  <Route exact path="/" render={()=><Redirect to="/pages" />} />
                   <Route path="/pages" component={Pages} />
                   <Route path="/todo" component={Todo} />
                   <Route path="/cnode" component={CNode} />

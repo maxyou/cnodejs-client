@@ -1,6 +1,6 @@
 import React from 'react'
 // import styled from 'styled-components'
-import { Switch, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link, Redirect } from 'react-router-dom'
 import styled from 'styled-components'
 import CNodeTopics from './cnode-redux'
 import Todo from './todo'
@@ -79,16 +79,17 @@ class Pages extends React.Component {
                         {/* <Link to={`${this.props.match.url}/`}>to home</Link>{'  '} */}
                         {/* <Route exact path={`${this.props.match.url}/`} render={()=><Redirect to={`${this.props.match.url}/topics`} />} /> */}
                         <Switch>
-                            <Route exact path={`${this.props.match.url}/`} component={Home} />
+                            <Route exact path={`${this.props.match.url}/`} render={()=><Redirect to={`${this.props.match.url}/cnode`} />} />
+                            {/* <Route exact path={`${this.props.match.url}/`} component={Home} /> */}
                             <Route path={`${this.props.match.url}/home`} component={Home} />
                             <Route path={`${this.props.match.url}/about`} component={About} />
-                            <Route path={`${this.props.match.url}/topics`} component={CNodeTopics} />
-                            <Route path={`${this.props.match.url}/funcs`} component={Todo} />
+                            <Route path={`${this.props.match.url}/cnode`} component={CNodeTopics} />
+                            <Route path={`${this.props.match.url}/todo`} component={Todo} />
                         </Switch>
                     </FlexMain>
                     <FlexBottom>
-                        <Link to={`${this.props.match.url}/topics`}>cnode</Link>
-                        <Link to={`${this.props.match.url}/funcs`}>todo</Link>
+                        <Link to={`${this.props.match.url}/cnode`}>cnode</Link>
+                        <Link to={`${this.props.match.url}/todo`}>todo</Link>
                         <Link to={`${this.props.match.url}/about`}>me</Link>
                     </FlexBottom>
                 </FlexContainer>
