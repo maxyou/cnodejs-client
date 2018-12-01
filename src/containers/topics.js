@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 const mapStateToProps = state => ({
     topics:state.topics,
     tabfilter:state.tabfilter,
-    paginate:state.paginate
+    current:state.paginate.current
 })
 
 const mapDispatchToProps = dispatch => ({

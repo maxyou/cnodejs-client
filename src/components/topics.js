@@ -110,7 +110,7 @@ class Topics extends React.Component {
     httpUpdate(){
         this.props.httpGet('/topics' 
         + tabfilterQueryStr(this.props.tabfilter)
-        + '&&page=' + this.props.paginate
+        + '&&page=' + this.props.current
         + '&&limit=20')
     }
 
@@ -126,7 +126,7 @@ class Topics extends React.Component {
         // console.log(this.props.tabfilter)
         // console.log(prevProps.tabfilter)
         if(this.props.tabfilter!==prevProps.tabfilter
-            || this.props.paginate!==prevProps.paginate
+            || this.props.current!==prevProps.current
             ){
             // this.props.httpGet('/topics' 
             //     + tabfilterQueryStr(this.props.tabfilter)

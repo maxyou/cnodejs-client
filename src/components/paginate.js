@@ -58,7 +58,7 @@ function PageRound({current, ext, maxRight, nav}) {
                     onClick={()=>nav(item)}
                     disabled={item===current}
                 >{item}</button>)}
-            <button disabled={ba[ba.length-1]==maxRight}>to maxRight</button>
+            <button disabled={ba[ba.length-1]==maxRight}>to {maxRight}</button>
         </div>
     );
 }
