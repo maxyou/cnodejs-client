@@ -52,14 +52,13 @@ function PageRound({current, ext, maxRight, nav}) {
     console.log(ba)
     return (
         <div>
-            {ba[0]==1?null:<button>to 1</button>}
-            
+            <button disabled={ba[0]==1}>to 1</button>            
             {ba.map((item)=><button 
                     key={item} 
                     onClick={()=>nav(item)}
                     disabled={item===current}
                 >{item}</button>)}
-            {ba[ba.length-1]==maxRight?null:<button>to maxRight</button>}
+            <button disabled={ba[ba.length-1]==maxRight}>to maxRight</button>
         </div>
     );
 }
