@@ -34,20 +34,22 @@ import { Link } from 'react-router-dom'
 // `   
 const StyledDiv = styled.div`    
     // background: pink;
+    // margin: 10px;
     .cn-ul{
-        margin: 3px;
-        padding: 3px;
+        // margin: 0px;
+        padding: 0px;
         // background: yellow;
 
         .cn-li{
-            margin: 3px;
-            padding: 3px;
+            list-style-type: none;
+            margin: 10px;
+            // padding: 3px;
             // background: red;
 
             .cn-topic{
-                margin: 3px;
-                padding: 3px;
-                background: grey;
+                // margin: 3px;
+                // padding: 3px;
+                background: #eeeeee;
                 display: flex;
                 flex-direction: row;
                 align-items: center;                
@@ -84,8 +86,10 @@ const StyledDiv = styled.div`
                 }
                 .cn-goto-detail{
                     flex: 0 0 auto;
-                    width: 60px;
-                    height: 60px;
+                    width: 50px;
+                    height: 50px;
+                    margin-right:10px;
+                    opacity: 0.3;
                     // background: green;
                     font-size: 0.5 rem;
                 }
@@ -141,20 +145,7 @@ class Topics extends React.Component {
         // console.log(this.props)
         return (
             <div>
-                {/* <StyledDiv2>
-                    <div className="cn-avatar-container2">
-                        <div className="cn-author2">loginname</div>
-                        <div className="cn-author22">==loginname</div>
-                    </div>
-                </StyledDiv2>
-                <StyledDivSpace>
-                    space
-                </StyledDivSpace> */}
                 <StyledDiv>
-                    {/* <hr />
-                    {this.props.topics.loading}{'---'}
-                    {this.props.tabfilter}
-                    <hr /> */}
                     <ul className="cn-ul">
                         {
                             this.props.topics.data?

@@ -3,7 +3,14 @@ import {TAB_FILTER, tabfilterStr} from '../reducers/tabfilter'
 import styled from 'styled-components'
 
 const StyledDiv = styled.div` 
-    margin: 5px;
+    margin: 5px 10px 5px 10px;
+    // background-color:yellow;
+
+    button{
+        width:50px;
+        height: 25px;
+        text-transform: capitalize;
+    }
 `  
 
 class TabFilter extends React.Component{

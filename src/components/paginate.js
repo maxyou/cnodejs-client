@@ -1,10 +1,19 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import styled from 'styled-components'
 
 const StyledDiv = styled.div` 
-    margin: 5px;
+    margin: 5px 10px 5px 10px;
+    // background-color:yellow;
 `  
+const StyledPageRound = styled.div` 
+    // margin: 5px;
+    // background-color:blue;
 
+    button{
+        width:50px;
+        height: 25px;
+    }
+`
 function calcButtonArray(current=1, ext=2, maxRight){
     // required:
     //  current <= maxright
@@ -46,20 +55,20 @@ function calcButtonArray(current=1, ext=2, maxRight){
 
 function PageRound({current, ext, maxRight, nav}) {
     const ba = calcButtonArray(current, ext, maxRight)
-    console.log(current)
-    console.log(ext)
-    console.log(maxRight)
-    console.log(ba)
+    // console.log(current)
+    // console.log(ext)
+    // console.log(maxRight)
+    // console.log(ba)
     return (
-        <div>
-            <button onClick={()=>nav(1)} disabled={ba[0]==1}>to 1</button>            
+        <StyledPageRound>
+            <button onClick={()=>nav(1)} disabled={ba[0]==1}>First</button>            
             {ba.map((item)=><button 
                     key={item} 
                     onClick={()=>nav(item)}
                     disabled={item===current}
                 >{item}</button>)}
-            <button onClick={()=>nav(maxRight)} disabled={ba[ba.length-1]==maxRight}>to {maxRight}</button>
-        </div>
+            <button onClick={()=>nav(maxRight)} disabled={ba[ba.length-1]==maxRight}>Last</button>
+        </StyledPageRound>
     );
 }
 
@@ -84,15 +93,15 @@ class Paginate extends React.Component{
     }
 
     render(){
-        console.log(this.props)
-        console.log(this.state)
+        // console.log(this.props)
+        // console.log(this.state)
         return (
-            <div>
+            <Fragment>
                 <StyledDiv>
                     <PageRound current={this.state.current} ext={this.state.ext} 
                         maxRight={this.props.paginate.maxPaginate} nav={this.handleChange}/>
                 </StyledDiv>
-            </div>
+            </Fragment>
         )
     }
 }

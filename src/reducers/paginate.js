@@ -2,7 +2,7 @@ import {ACTION} from '../actions/paginate'
 
 const initState = {
         current:1,
-        maxPaginate:16 //assume last page is 16
+        maxPaginate:50 //assume last page is 16
     }
 
 const paginate = (state = initState, action) => {
