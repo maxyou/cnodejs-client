@@ -52,11 +52,14 @@ function PageRound({current, ext, maxRight, nav}) {
     console.log(ba)
     return (
         <div>
+            {ba[0]==1?null:<button>to 1</button>}
+            
             {ba.map((item)=><button 
                     key={item} 
                     onClick={()=>nav(item)}
                     disabled={item===current}
                 >{item}</button>)}
+            {ba[ba.length-1]==maxRight?null:<button>to maxRight</button>}
         </div>
     );
 }
@@ -69,7 +72,7 @@ class Paginate extends React.Component{
         this.handleChange = this.handleChange.bind(this)
         this.state = {
             current : props.paginate.current,
-            ext : 5
+            ext : 2
         }
         // console.log(this.props.paginate)
         // console.log(this.state)
