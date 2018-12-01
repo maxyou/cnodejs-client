@@ -80,7 +80,7 @@ class Paginate extends React.Component{
         this.handleChange = this.handleChange.bind(this)
         this.state = {
             current : props.paginate.current,
-            ext : 2
+            ext : 3
         }
         // console.log(this.props.paginate)
         // console.log(this.state)
