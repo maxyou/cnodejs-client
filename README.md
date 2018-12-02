@@ -1,4 +1,4 @@
-# xiaomi-store-client
+# cnodejs-client
 
 > My first React.js work is a https://cnodejs.org client. <br>
 > Sincere thanks to https://cnodejs.org which privde server-side & api!
